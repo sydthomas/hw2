@@ -10,22 +10,31 @@
  *  in this header file (since they are templates).
  *  Both functions should run in time O(n*log(n)) and not O(n^2)
  */
+
+ //** store keyworsd in common case **////
 template <typename T>
 std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
 {
-
-
-
-
-
+  // AND 
+  std::set<T> intersectionSet;
+  for(T item: s1){
+    if(s2.end() != s2.find(item)){
+      intersectionSet.insert(item);
+    }
+  }
+  return intersectionSet;
 }
+
 template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 {
 
-
-
-
+//foudnd in either of the sets 
+  std::set<T> intersectionSet;
+  for(T item: s1){
+    s2.insert(item);
+  }
+  return s2;
 
 }
 
